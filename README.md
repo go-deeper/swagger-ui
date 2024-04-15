@@ -1,5 +1,7 @@
 # swagger-ui
 
+This module provides a wrapper of [SwaggerUI](https://github.com/swagger-api/swagger-ui) using the Go [embed](https://pkg.go.dev/embed) [FS](https://pkg.go.dev/io/fs) type.
+
 ## Install
 
 ```shell
@@ -12,17 +14,17 @@ go get github.com/go-deeper/swagger-ui
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
 	swaggerui "github.com/go-deeper/swagger-ui/pkg"
 )
 
-const swaggerJSON = `{"openapi": "3.1.0", "info": {"title": "OpenAPI", "version": "1.0.0"}, "paths": {}}`
-
 func main() {
 	http.HandleFunc("/swagger.json", func(rw http.ResponseWriter, _ *http.Request) {
-		_, _ = rw.Write([]byte(swaggerJSON))
+		rw.Header().Set("Content-Type", "application/json")
+		_, _ = fmt.Fprint(rw, `{"openapi": "3.1.0", "info": {"title": "OpenAPI", "version": "1.0.0"}, "paths": {}}`)
 	})
 
 	http.Handle("GET /docs/", http.StripPrefix("/docs/", http.FileServerFS(swaggerui.FS)))
