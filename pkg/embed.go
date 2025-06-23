@@ -4,5 +4,5 @@ package swaggerui
 
 import "embed"
 
-//go:embed *
+//go:embed *.css *.html *.js *.map *.png
 var FS embed.FS
