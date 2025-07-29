@@ -1,7 +1,10 @@
 # swagger-ui
 
-This module provides a wrapper of [SwaggerUI](https://github.com/swagger-api/swagger-ui) using the Go [embed](https://pkg.go.dev/embed) [FS](https://pkg.go.dev/io/fs) type.
+This module provides a wrapper of [Swagger UI](https://github.com/swagger-api/swagger-ui) using the Go [embed](https://pkg.go.dev/embed) [FS](https://pkg.go.dev/io/fs) type.
 The module allows you to add `swagger-ui` for an existing `swagger.json` in your project.
+
+This project uses code from [Swagger UI](https://github.com/swagger-api/swagger-ui),
+licensed under the [Apache License 2.0](https://github.com/swagger-api/swagger-ui/blob/master/LICENSE).
 
 ## Install
 
