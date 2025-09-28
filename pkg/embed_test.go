@@ -15,7 +15,8 @@ func TestFS(t *testing.T) {
 	wantNames := [...]string{
 		"favicon-16x16.png", "favicon-32x32.png",
 		"index.css", "index.html",
-		"oauth2-redirect.html", "swagger-initializer.js",
+		"oauth2-redirect.html", "oauth2-redirect.js",
+		"swagger-initializer.js",
 		"swagger-ui-bundle.js", "swagger-ui-bundle.js.map",
 		"swagger-ui-es-bundle-core.js", "swagger-ui-es-bundle-core.js.map",
 		"swagger-ui-es-bundle.js", "swagger-ui-es-bundle.js.map",
